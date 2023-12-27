@@ -26,7 +26,7 @@ const Home = () => {
 
   const handleAddHobby = (values, { resetForm }) => {
     axios
-      .post("/api/hobby/add", { hobbyName: values.newHobby, user: { id: 1 } })
+      .post("/api/hobby/add", { hobbyName: values.newHobby, user: { id: user.id } })
       .then(() => {
         resetForm();
         fetchHobbies(); // Fetch updated list of hobbies after adding a new one
